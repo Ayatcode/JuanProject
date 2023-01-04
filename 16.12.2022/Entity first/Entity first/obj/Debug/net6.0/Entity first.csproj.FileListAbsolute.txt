@@ -1,5 +1,0 @@
-C:\Users\User\Desktop\java\16.12.2022\Entity first\Entity first\obj\Debug\net6.0\Entity first.csproj.AssemblyReference.cache
-C:\Users\User\Desktop\java\16.12.2022\Entity first\Entity first\obj\Debug\net6.0\Entity first.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\User\Desktop\java\16.12.2022\Entity first\Entity first\obj\Debug\net6.0\Entity first.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\java\16.12.2022\Entity first\Entity first\obj\Debug\net6.0\Entity first.AssemblyInfo.cs
-C:\Users\User\Desktop\java\16.12.2022\Entity first\Entity first\obj\Debug\net6.0\Entity first.csproj.CoreCompileInputs.cache
