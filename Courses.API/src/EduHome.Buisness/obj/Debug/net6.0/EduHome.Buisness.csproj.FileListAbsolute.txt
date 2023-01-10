@@ -1,0 +1,17 @@
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\bin\Debug\net6.0\EduHome.Buisness.deps.json
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\bin\Debug\net6.0\EduHome.Buisness.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\bin\Debug\net6.0\EduHome.Buisness.pdb
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\obj\Debug\net6.0\EduHome.Buisness.csproj.AssemblyReference.cache
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\obj\Debug\net6.0\EduHome.Buisness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\obj\Debug\net6.0\EduHome.Buisness.AssemblyInfoInputs.cache
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\obj\Debug\net6.0\EduHome.Buisness.AssemblyInfo.cs
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\obj\Debug\net6.0\EduHome.Buisness.csproj.CoreCompileInputs.cache
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\obj\Debug\net6.0\EduHome.Buisness.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\obj\Debug\net6.0\refint\EduHome.Buisness.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\obj\Debug\net6.0\EduHome.Buisness.pdb
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\obj\Debug\net6.0\ref\EduHome.Buisness.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\bin\Debug\net6.0\EduHome.Core.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\bin\Debug\net6.0\EduHome.DataAccess.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\bin\Debug\net6.0\EduHome.Core.pdb
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\bin\Debug\net6.0\EduHome.DataAccess.pdb
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.Buisness\obj\Debug\net6.0\EduHome.Buisness.csproj.CopyComplete

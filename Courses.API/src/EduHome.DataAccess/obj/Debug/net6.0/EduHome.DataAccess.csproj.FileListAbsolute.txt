@@ -1,0 +1,17 @@
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\bin\Debug\net6.0\EduHome.DataAccess.deps.json
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\bin\Debug\net6.0\EduHome.DataAccess.runtimeconfig.json
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\bin\Debug\net6.0\EduHome.DataAccess.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\bin\Debug\net6.0\EduHome.DataAccess.pdb
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\bin\Debug\net6.0\EduHome.Core.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\bin\Debug\net6.0\EduHome.Core.pdb
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\obj\Debug\net6.0\EduHome.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\obj\Debug\net6.0\EduHome.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\obj\Debug\net6.0\EduHome.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\obj\Debug\net6.0\EduHome.DataAccess.AssemblyInfo.cs
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\obj\Debug\net6.0\EduHome.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\obj\Debug\net6.0\EduHome.DataAccess.csproj.CopyComplete
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\obj\Debug\net6.0\EduHome.DataAccess.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\obj\Debug\net6.0\refint\EduHome.DataAccess.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\obj\Debug\net6.0\EduHome.DataAccess.pdb
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\obj\Debug\net6.0\EduHome.DataAccess.genruntimeconfig.cache
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.DataAccess\obj\Debug\net6.0\ref\EduHome.DataAccess.dll
