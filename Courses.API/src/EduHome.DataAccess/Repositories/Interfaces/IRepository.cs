@@ -14,9 +14,9 @@ public interface IRepository<T> where T:class,IEntity,new()
     IQueryable<T> FindAll();
 
     IQueryable<T> FindByCondition(Expression<Func<T,bool>> expression);
-    T? FindByID(int id);
+    Task<T?> FindByIDAsync(int id);
 
-    Task Create(T entity);
+    Task CreateAsync(T entity);
     void Update(T entity);
     void Delete(T entity);
 

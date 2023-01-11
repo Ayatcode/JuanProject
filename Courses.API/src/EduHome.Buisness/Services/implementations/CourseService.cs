@@ -4,6 +4,7 @@ using EduHome.Buisness.Exceptions;
 using EduHome.Buisness.Services.Interfaces;
 using EduHome.Core.Entities;
 using EduHome.DataAccess.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -29,34 +30,61 @@ public class CourseService : ICourseService
         var result= _mapper.Map<List<CourseDTIO>>(courses);
         return result;
     }
-    public Task Create(Course entity)
+    public async Task CreateAsync(CourseCreateDtio entity)
     {
-        throw new NotImplementedException();
+        if (entity == null) throw new ArgumentNullException(nameof(entity));
+        var newCourse=_mapper.Map<Course>(entity);
+        await _courseRepsitory.CreateAsync(newCourse);
+        await _courseRepsitory.SaveAsync();
     }
 
   
 
     
 
-    public Task<List<Course>> FindByCondition(Expression<Func<Course, bool>> expression)
+    public  async Task<List<CourseDTIO>> FindByConditionAsync(Expression<Func<Course, bool>> expression)
     {
-        throw new NotImplementedException();
+        var courses= await _courseRepsitory.FindByCondition(expression).ToListAsync();
+        var result= _mapper.Map<List<CourseDTIO>>(courses);
+        return result;
     }
 
-    public Task FindById(int id)
+    public async Task<CourseDTIO> FindByIdAsync(int id)
     {
-        throw new NotImplementedException();
+       var course= await _courseRepsitory.FindByIDAsync(id);
+        if (course == null) throw new NotFoundException("Not found");
+        return _mapper.Map<CourseDTIO>(course);
+
     }
 
    
 
-    public void Update(Course entity)
+    public async Task UpdateAsync(int id ,CourseUpdateDtio entity)
     {
-        throw new NotImplementedException();
+        var baseCourse = await _courseRepsitory.FindByIDAsync(id);
+        if (baseCourse == null)
+        {
+            throw new NotFoundException("Not found");
+
+        }
+       // var updateCourse = _mapper.Map<Course>(entity);
+        baseCourse.Image= entity.Image;
+        baseCourse.Name= entity.Name;
+        baseCourse.Description= entity.Description;
+       
+        _courseRepsitory.Update(baseCourse);
+        await _courseRepsitory.SaveAsync();
     }
 
-    public void Delete(Course entity)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var Course = await _courseRepsitory.FindByIDAsync(id);
+        if (Course == null)
+        {
+            throw new NotFoundException("Not found");
+
+        }
+        _courseRepsitory.Delete(Course);
+        await _courseRepsitory.SaveAsync();
     }
 }

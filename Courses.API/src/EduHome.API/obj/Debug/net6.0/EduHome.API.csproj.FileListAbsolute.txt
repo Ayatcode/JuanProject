@@ -73,3 +73,6 @@ C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.API\bin\Debug\net6.0\EduHome.B
 C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.API\bin\Debug\net6.0\EduHome.Buisness.pdb
 C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.API\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.API\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

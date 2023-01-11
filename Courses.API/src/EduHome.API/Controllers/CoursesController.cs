@@ -1,7 +1,9 @@
-﻿using EduHome.Buisness.Exceptions;
+﻿using EduHome.Buisness.DTIOs.Courses;
+using EduHome.Buisness.Exceptions;
 using EduHome.Buisness.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace EduHome.API.Controllers;
 
@@ -33,4 +35,105 @@ public class CoursesController : ControllerBase
         }
       
     }
+
+    [HttpPost("")]
+    public async Task<IActionResult> Post(CourseCreateDtio entity)
+    {
+        try
+        {
+            await _courseService.CreateAsync(entity);
+
+            return Ok(entity);
+
+        }
+        catch (Exception)
+        {
+
+            return StatusCode((int)HttpStatusCode.InternalServerError);
+        }
+        
+    }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetByID(int id)
+    {
+       
+        try
+        {
+            var course = await _courseService.FindByIdAsync(id);
+            return Ok(course);
+        }
+        catch (NotFoundException ex)
+        {
+            return NotFound(ex.Message);
+        }
+        catch (FormatException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+
+    [HttpGet("searchByName/{Name}")]
+    public async Task<IActionResult> GetByName(string name)
+    {
+        try
+        {
+            var result=await _courseService.FindByConditionAsync(n => n.Name != null ? n.Name.Contains(name) :true );
+            return Ok(result);
+        }
+        catch (Exception )
+        {
+
+            return StatusCode((int)HttpStatusCode.InternalServerError);
+        }
+    }
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Put(int id,CourseUpdateDtio course)
+    {
+        try
+        {
+             await _courseService.UpdateAsync(id,course);
+            return Ok(course);
+        }
+        catch (NotFoundException ex)
+        {
+            return NotFound(ex.Message);
+        }
+        catch (FormatException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        try
+        {
+            await _courseService.DeleteAsync(id);
+            return Ok();
+        }
+        catch (NotFoundException ex)
+        {
+            return NotFound(ex.Message);
+        }
+        catch (FormatException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+
 }

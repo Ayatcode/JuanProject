@@ -1,9 +1,12 @@
 using EduHome.Buisness.Mappers;
 using EduHome.Buisness.Services.implementations;
 using EduHome.Buisness.Services.Interfaces;
+using EduHome.Buisness.Validator.Courses;
 using EduHome.DataAccess.Context;
 using EduHome.DataAccess.Repositories.implementations;
 using EduHome.DataAccess.Repositories.Interfaces;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +14,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssembly(typeof(CoursePostDtioValidator).Assembly);
+
 var constr = builder.Configuration["ConnectionStrings:Default"];
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {

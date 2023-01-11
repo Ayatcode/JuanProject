@@ -12,11 +12,11 @@ namespace EduHome.Buisness.Services.Interfaces;
 public interface ICourseService
 {
     Task<List<CourseDTIO> > FindAllAsync();
-    Task<List<Course>> FindByCondition(Expression<Func<Course, bool>> expression);
+    Task<List<CourseDTIO>> FindByConditionAsync(Expression<Func<Course, bool>> expression);
 
-    Task FindById(int id);
+    Task<CourseDTIO> FindByIdAsync(int id);
 
-    Task Create(Course entity);
-    void Update(Course entity);
-    void Delete(Course entity);
+    Task CreateAsync(CourseCreateDtio entity);
+    Task UpdateAsync(int id , CourseUpdateDtio entity);
+    Task DeleteAsync(int id);
 }

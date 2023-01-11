@@ -22,7 +22,7 @@ public class Repository<T> : IRepository<T> where T : class, IEntity, new()
 
     public DbSet<T> Table =>_context.Set<T>();
 
-    public async Task Create(T entity)
+    public async Task CreateAsync(T entity)
     {
         await Table.AddAsync(entity);
     }
@@ -39,15 +39,16 @@ public class Repository<T> : IRepository<T> where T : class, IEntity, new()
         return Table.Where(expression).AsNoTracking();
     }
 
-    public T? FindByID(int id)
+    public async Task<T?> FindByIDAsync(int id)
     {
-        return Table.Find(id);
+        return  await Table.FindAsync(id);
     }
 
 
 
     public void Update(T entity)
     {
+      
         Table.Update(entity);
     }
     public void Delete(T entity)
