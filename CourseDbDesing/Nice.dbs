@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Frioella" id="Project-146d" database="MySql" >
+	<schema name="frioella" >
+		<table name="blog_category" prior="blog_category_" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_blog_category" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_blog_category_blog_page" to_schema="frioella" to_table="blog_page" >
+				<fk_column name="id" pk="categories_id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="blog_page" prior="tbl_0" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<column name="description" type="VARCHAR" length="100" jt="12" />
+			<column name="categories_id" type="INT" jt="4" />
+			<column name="image_id" prior="image" type="INT" jt="4" />
+			<index name="pk_blog_page" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_blog_page_categories_id" unique="UNIQUE_KEY" >
+				<column name="categories_id" />
+			</index>
+			<index name="unq_blog_page_image_id" unique="UNIQUE_KEY" >
+				<column name="image_id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="experts" prior="experts_home_page" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="position_id" type="INT" length="1" jt="4" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_experts" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_experts_position_id" unique="UNIQUE_KEY" >
+				<column name="position_id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="experts_comment" prior="experts_" >
+			<column name="id" type="INT" jt="4" />
+			<column name="comment" type="INT" jt="4" />
+			<column name="expert_id" type="INT" jt="4" />
+			<fk name="fk_experts_comment_experts" to_schema="frioella" to_table="experts" >
+				<fk_column name="expert_id" pk="id" />
+			</fk>
+			<fk name="fk_experts_comment_grid_home" to_schema="frioella" to_table="grid_home" >
+				<fk_column name="id" pk="experts_comment_id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="flower_forsale" prior="tbl_0" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="count" type="INT" jt="4" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_flower_forsale" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_flower_forsale_flower_shop_page" to_schema="frioella" to_table="flower_shop_page" >
+				<fk_column name="id" pk="flower_for_sales_id" />
+			</fk>
+			<fk name="fk_flower_forsale_shop_page" to_schema="frioella" to_table="shop_page" >
+				<fk_column name="id" pk="flower_for_sale_id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="flower_shop_page" prior="tbl" >
+			<column name="id" type="INT" jt="4" />
+			<column name="flower_for_sales_id" prior="flower_for_sales" type="INT" jt="4" />
+			<column name="price" type="INT" jt="4" />
+			<column name="status_id" prior="status" type="CHAR" length="1" jt="1" />
+			<index name="unq_flower_shop_page_status_id" unique="UNIQUE_KEY" >
+				<column name="status_id" />
+			</index>
+			<index name="unq_flower_shop_page_flower_for_sales_id" unique="UNIQUE_KEY" >
+				<column name="flower_for_sales_id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="grid_home" prior="tbl" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="flower_id" type="INT" jt="4" />
+			<column name="experts_comment_id" type="INT" jt="4" />
+			<column name="slider_id" type="INT" jt="4" />
+			<index name="pk_grid_home" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_grid_home_flower_id" unique="UNIQUE_KEY" >
+				<column name="flower_id" />
+			</index>
+			<index name="unq_grid_home_experts_comment_id" unique="UNIQUE_KEY" >
+				<column name="experts_comment_id" />
+			</index>
+			<index name="unq_grid_home_slider_id" unique="UNIQUE_KEY" >
+				<column name="slider_id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="grid_home_flower" prior="tbl" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<column name="image" type="INT" jt="4" />
+			<index name="pk_grid_home_flower" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_grid_home_flower_grid_home" to_schema="frioella" to_table="grid_home" >
+				<fk_column name="id" pk="flower_id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="home_page" prior="home" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="slider_details_id" prior="slider" type="INT" jt="4" />
+			<column name="experts_id" prior="experts" type="INT" jt="4" />
+			<column name="blog_id" type="INT" jt="4" />
+			<index name="pk_home_page" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_home_page_blog_id" unique="UNIQUE_KEY" >
+				<column name="blog_id" />
+			</index>
+			<fk name="fk_home_page_experts" to_schema="frioella" to_table="experts" >
+				<fk_column name="experts_id" pk="id" />
+			</fk>
+			<fk name="fk_home_page_slider_detail_home" to_schema="frioella" to_table="slider_detail_home" >
+				<fk_column name="slider_details_id" pk="id " />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="home_page_blog" prior="home" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<column name="description" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_home_page_blog" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_home_page_blog_home_page" to_schema="frioella" to_table="home_page" >
+				<fk_column name="id" pk="blog_id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="image_blog" prior="image_" >
+			<column name="id" type="INT" jt="4" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<fk name="fk_image_blog_blog_page" to_schema="frioella" to_table="blog_page" >
+				<fk_column name="id" pk="image_id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="position" prior="tbl" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="position_name" prior="name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_position" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_position_experts" to_schema="frioella" to_table="experts" >
+				<fk_column name="id" pk="position_id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="shop_page" prior="tbl_0" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="flower_for_sale_id" prior="flower_for_sale" type="INT" jt="4" />
+			<column name="categories_id" type="INT" jt="4" />
+			<column name="date_upload" type="DATE" jt="91" />
+			<column name="status_id" type="INT" length="1" jt="4" />
+			<column name="price" type="INT" jt="4" />
+			<index name="pk_shop_page" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_shop_page_flower_for_sale_id" unique="UNIQUE_KEY" >
+				<column name="flower_for_sale_id" />
+			</index>
+			<index name="unq_shop_page_status_id" unique="UNIQUE_KEY" >
+				<column name="status_id" />
+			</index>
+			<index name="unq_shop_page_categories_id" unique="UNIQUE_KEY" >
+				<column name="categories_id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="shop_page_categoris" prior="shop_page_" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_shop_page_categoris" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_shop_page_categoris_shop_page" to_schema="frioella" to_table="shop_page" >
+				<fk_column name="id" pk="categories_id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="slider_detail_home" prior="tbl_1" >
+			<column name="id " type="INT" jt="4" mandatory="y" />
+			<column name="description" prior="img" type="INT" jt="4" />
+			<column name="img_id" type="INT" jt="4" />
+			<index name="pk_slider_detail_home" unique="PRIMARY_KEY" >
+				<column name="id " />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="slider_grid_home" prior="tbl" >
+			<column name="id" type="INT" jt="4" />
+			<column name="image" type="INT" jt="4" />
+			<column name="description" type="VARCHAR" length="100" jt="12" />
+			<fk name="fk_slider_grid_home_grid_home" to_schema="frioella" to_table="grid_home" >
+				<fk_column name="id" pk="slider_id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="status_flower_shop" prior="tbl_0" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="status_name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_status_flower_shop" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fk_status_flower_shop_flower_shop_page" to_schema="frioella" to_table="flower_shop_page" >
+				<fk_column name="id" pk="status_id" />
+			</fk>
+			<fk name="fk_status_flower_shop_shop_page" to_schema="frioella" to_table="shop_page" >
+				<fk_column name="id" pk="status_id" />
+			</fk>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="tbl" />
+		<table name="tbl_0" />
+	</schema>
+	<connector name="MyDb" database="MySql" host="localhost" port="3306" user="root" useSystemProxy="false" />
+	<layout name="Default Layout" id="Layout-244b" show_relation="columns" >
+		<entity schema="frioella" name="blog_category" color="C1D8EE" x="1552" y="560" />
+		<entity schema="frioella" name="blog_page" color="C1D8EE" x="1328" y="528" />
+		<entity schema="frioella" name="experts" color="C1D8EE" x="576" y="208" />
+		<entity schema="frioella" name="experts_comment" color="C1D8EE" x="144" y="480" />
+		<entity schema="frioella" name="flower_forsale" color="C1D8EE" x="192" y="848" />
+		<entity schema="frioella" name="flower_shop_page" color="C1D8EE" x="480" y="800" />
+		<entity schema="frioella" name="grid_home" color="C1D8EE" x="352" y="448" />
+		<entity schema="frioella" name="grid_home_flower" color="C1D8EE" x="704" y="496" />
+		<entity schema="frioella" name="home_page" color="C1D8EE" x="288" y="160" />
+		<entity schema="frioella" name="home_page_blog" color="C1D8EE" x="48" y="208" />
+		<entity schema="frioella" name="image_blog" color="C1D8EE" x="1088" y="560" />
+		<entity schema="frioella" name="position" color="C1D8EE" x="800" y="240" />
+		<entity schema="frioella" name="shop_page" color="C1D8EE" x="448" y="976" />
+		<entity schema="frioella" name="shop_page_categoris" color="C1D8EE" x="864" y="1024" />
+		<entity schema="frioella" name="slider_detail_home" color="C1D8EE" x="544" y="48" />
+		<entity schema="frioella" name="slider_grid_home" color="C1D8EE" x="480" y="640" />
+		<entity schema="frioella" name="status_flower_shop" color="C1D8EE" x="720" y="896" />
+	</layout>
+</project>
