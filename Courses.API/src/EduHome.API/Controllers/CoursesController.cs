@@ -77,7 +77,7 @@ public class CoursesController : ControllerBase
         }
     }
 
-    [HttpGet("searchByName/{Name}")]
+    [HttpGet("searchByName/{name}")]
     public async Task<IActionResult> GetByName(string name)
     {
         try
@@ -110,7 +110,7 @@ public class CoursesController : ControllerBase
         catch (Exception)
         {
 
-            throw;
+            return StatusCode((int)HttpStatusCode.InternalServerError);
         }
     }
     [HttpDelete("{id}")]

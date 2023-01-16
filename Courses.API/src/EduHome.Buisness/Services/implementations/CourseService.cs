@@ -61,18 +61,21 @@ public class CourseService : ICourseService
 
     public async Task UpdateAsync(int id ,CourseUpdateDtio entity)
     {
-        var baseCourse = await _courseRepsitory.FindByIDAsync(id);
+        
+        
+        
+        var baseCourse =  _courseRepsitory.FindByCondition(c=> c.Id==id);
         if (baseCourse == null)
         {
             throw new NotFoundException("Not found");
 
         }
-       // var updateCourse = _mapper.Map<Course>(entity);
-        baseCourse.Image= entity.Image;
-        baseCourse.Name= entity.Name;
-        baseCourse.Description= entity.Description;
+        var updateCourse = _mapper.Map<Course>(entity);
+        //baseCourse.Image= entity.Image;
+        //baseCourse.Name= entity.Name;
+        //baseCourse.Description= entity.Description;
        
-        _courseRepsitory.Update(baseCourse);
+        _courseRepsitory.Update(updateCourse);
         await _courseRepsitory.SaveAsync();
     }
 

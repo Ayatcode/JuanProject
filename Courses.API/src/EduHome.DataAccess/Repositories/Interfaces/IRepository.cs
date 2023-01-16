@@ -11,6 +11,7 @@ namespace EduHome.DataAccess.Repositories.Interfaces;
 
 public interface IRepository<T> where T:class,IEntity,new()
 {
+
     IQueryable<T> FindAll();
 
     IQueryable<T> FindByCondition(Expression<Func<T,bool>> expression);

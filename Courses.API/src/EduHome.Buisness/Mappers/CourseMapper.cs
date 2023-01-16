@@ -15,6 +15,6 @@ public class CourseMapper:Profile
 	{
 		CreateMap<Course, CourseDTIO>().ReverseMap();
 		CreateMap<CourseCreateDtio, Course>().ReverseMap();
-		CreateMap<CourseUpdateDtio, Course>();
+		CreateMap<CourseUpdateDtio, Course>().ReverseMap();
 	}
 }
