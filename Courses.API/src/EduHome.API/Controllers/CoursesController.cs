@@ -1,6 +1,7 @@
 ﻿using EduHome.Buisness.DTIOs.Courses;
 using EduHome.Buisness.Exceptions;
 using EduHome.Buisness.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -19,6 +20,7 @@ public class CoursesController : ControllerBase
     }
 
     [HttpGet("getcourses")]
+    //[Authorize]
     public async Task<IActionResult> Get()
     {
         try
@@ -134,6 +136,24 @@ public class CoursesController : ControllerBase
 
             throw;
         }
+    }
+
+    [HttpPost("[action]")]
+    public async Task<IActionResult> PostImage([FromForm] CourseCreateImgDTO imgDTO)
+    {
+        try
+        {
+            await _courseService.CreateImage(imgDTO);
+
+            return Ok();
+
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+
     }
 
 }

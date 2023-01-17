@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Ayat\\Desktop\\API\\Courses.API\\src\\EduHome.API\\wwwroot\\assets\\48e49ad9-bd36-43e1-827b-45b3af3d1ef1982991.jpg",
+      "PackagePath": "staticwebassets\\assets\\48e49ad9-bd36-43e1-827b-45b3af3d1ef1982991.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ayat\\Desktop\\API\\Courses.API\\src\\EduHome.API\\wwwroot\\assets\\6adc7adf-6347-4490-87f0-aeb2c9c54444982991.jpg",
+      "PackagePath": "staticwebassets\\assets\\6adc7adf-6347-4490-87f0-aeb2c9c54444982991.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ayat\\Desktop\\API\\Courses.API\\src\\EduHome.API\\wwwroot\\assets\\b4223c38-9674-4a98-ba22-53f340be5233982991.jpg",
+      "PackagePath": "staticwebassets\\assets\\b4223c38-9674-4a98-ba22-53f340be5233982991.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.EduHome.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.EduHome.API.props",
+      "PackagePath": "build\\EduHome.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.EduHome.API.props",
+      "PackagePath": "buildMultiTargeting\\EduHome.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.EduHome.API.props",
+      "PackagePath": "buildTransitive\\EduHome.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

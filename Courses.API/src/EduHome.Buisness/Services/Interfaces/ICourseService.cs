@@ -19,4 +19,5 @@ public interface ICourseService
     Task CreateAsync(CourseCreateDtio entity);
     Task UpdateAsync(int id , CourseUpdateDtio entity);
     Task DeleteAsync(int id);
+    Task CreateImage(CourseCreateImgDTO imgDTO);
 }

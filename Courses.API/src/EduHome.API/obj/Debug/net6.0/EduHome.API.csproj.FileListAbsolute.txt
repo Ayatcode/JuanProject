@@ -81,3 +81,5 @@ C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.API\bin\Debug\net6.0\Microsoft
 C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Ayat\Desktop\API\Courses.API\src\EduHome.API\bin\Debug\net6.0\EduHome.API.staticwebassets.runtime.json

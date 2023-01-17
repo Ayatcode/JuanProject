@@ -1,11 +1,71 @@
 {
   "Version": 1,
-  "Hash": "2E+r0ymVEXUT8wwebbXk8S1ncBpOn8jzwSE1uP+E1/I=",
+  "Hash": "efo6vvAYLJ+Uu2P46EajXSTohYRTSsBRl4w+Fc3a/9U=",
   "Source": "EduHome.API",
   "BasePath": "_content/EduHome.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "EduHome.API\\wwwroot",
+      "Source": "EduHome.API",
+      "ContentRoot": "C:\\Users\\Ayat\\Desktop\\API\\Courses.API\\src\\EduHome.API\\wwwroot\\",
+      "BasePath": "_content/EduHome.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Ayat\\Desktop\\API\\Courses.API\\src\\EduHome.API\\wwwroot\\assets\\48e49ad9-bd36-43e1-827b-45b3af3d1ef1982991.jpg",
+      "SourceId": "EduHome.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ayat\\Desktop\\API\\Courses.API\\src\\EduHome.API\\wwwroot\\",
+      "BasePath": "_content/EduHome.API",
+      "RelativePath": "assets/48e49ad9-bd36-43e1-827b-45b3af3d1ef1982991.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\48e49ad9-bd36-43e1-827b-45b3af3d1ef1982991.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Ayat\\Desktop\\API\\Courses.API\\src\\EduHome.API\\wwwroot\\assets\\6adc7adf-6347-4490-87f0-aeb2c9c54444982991.jpg",
+      "SourceId": "EduHome.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ayat\\Desktop\\API\\Courses.API\\src\\EduHome.API\\wwwroot\\",
+      "BasePath": "_content/EduHome.API",
+      "RelativePath": "assets/6adc7adf-6347-4490-87f0-aeb2c9c54444982991.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\6adc7adf-6347-4490-87f0-aeb2c9c54444982991.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Ayat\\Desktop\\API\\Courses.API\\src\\EduHome.API\\wwwroot\\assets\\b4223c38-9674-4a98-ba22-53f340be5233982991.jpg",
+      "SourceId": "EduHome.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ayat\\Desktop\\API\\Courses.API\\src\\EduHome.API\\wwwroot\\",
+      "BasePath": "_content/EduHome.API",
+      "RelativePath": "assets/b4223c38-9674-4a98-ba22-53f340be5233982991.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\b4223c38-9674-4a98-ba22-53f340be5233982991.jpg"
+    }
+  ]
 }

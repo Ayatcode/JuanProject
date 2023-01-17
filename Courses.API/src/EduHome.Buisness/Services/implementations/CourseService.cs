@@ -2,8 +2,11 @@
 using EduHome.Buisness.DTIOs.Courses;
 using EduHome.Buisness.Exceptions;
 using EduHome.Buisness.Services.Interfaces;
+using EduHome.Buisness.Utilites;
 using EduHome.Core.Entities;
+using EduHome.Core.Interfaces;
 using EduHome.DataAccess.Repositories.Interfaces;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -19,10 +22,12 @@ public class CourseService : ICourseService
 {
     private readonly ICourseRepsitory _courseRepsitory;
     private readonly IMapper _mapper;
-    public CourseService(ICourseRepsitory courseRepsitory, IMapper mapper)
+    private readonly IWebHostEnvironment _env;
+    public CourseService(ICourseRepsitory courseRepsitory, IMapper mapper, IWebHostEnvironment env)
     {
         _courseRepsitory = courseRepsitory;
         _mapper = mapper;
+        _env = env;
     }
     public async Task<List<CourseDTIO>> FindAllAsync()
     {
@@ -88,6 +93,27 @@ public class CourseService : ICourseService
 
         }
         _courseRepsitory.Delete(Course);
+        await _courseRepsitory.SaveAsync();
+    }
+
+    public async Task CreateImage([FromForm]CourseCreateImgDTO imgDTO)
+    {
+        var filename=string.Empty;
+        if (imgDTO == null) throw new ArgumentNullException();
+
+        if (imgDTO.Img.Length > 0)
+        {
+           filename= await imgDTO.Img.CopyFileAsync(_env.WebRootPath, "assets");
+            imgDTO.Image = filename;
+        }
+
+        Course result = new()
+        {
+            Name= imgDTO.Name,
+            Description= imgDTO.Description,
+            Image= imgDTO.Image,
+        };
+        _courseRepsitory.Update(result);
         await _courseRepsitory.SaveAsync();
     }
 }
